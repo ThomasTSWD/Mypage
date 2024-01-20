@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Blagues aléatoires toutes les 10 secondes</title>
+	</head>
+	<body>
+		<div id="joke"></div>
+		<script>
+			function getRandomJoke() {
+				// Appeler l'API de l'application "Jokes One" pour obtenir une blague aléatoire
+				fetch(
+					"https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist"
+				)
+					.then((response) => response.json())
+					.then((data) => {
+						// Afficher la blague dans le div "joke"
+						if (data.type === "single") {
+							document.getElementById("joke").innerHTML =
+								data.joke;
+						} else {
+							document.getElementById(
+								"joke"
+							).innerHTML = `${data.setup}<br><br>${data.delivery}`;
+						}
+					});
+			}
+			getRandomJoke();
+			// Appeler la fonction getRandomJoke toutes les 10 secondes
+			setInterval(getRandomJoke, 10000);
+		</script>
+	</body>
+	<style>
+		body {
+			background: #0a1b23;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 90vh;
+			font-size: 1.5em;
+			font-family: sans-serif;
+		}
+	</style>
+</html>
