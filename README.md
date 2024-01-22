@@ -1,1 +1,1 @@
-https://thomastswd.github.io/Mypage/
+https://thomastswd.github.io/mypage/
