@@ -15,14 +15,14 @@ body {
 }
 
 body {
-	background-image: url("edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
-	margin: 0;
-	background-size: cover;
-	background-position: top;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+    background-image: url("edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
+    margin: 0;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 section {
@@ -94,6 +94,12 @@ canvas {
 .card span {
 	font-weight: 800;
 	font-size: 1.5em;
+}
+
+footer{
+	    font-family: 'Montserrat';
+    width: 72%;
+    color: white;
 }
 
 @media screen and (max-width: 980px) {
