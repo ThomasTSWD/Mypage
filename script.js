@@ -103,7 +103,7 @@ function alternateEmojis() {
   if (emojiIcon) {
     // Utilise une variable pour suivre l'état actuel
     if (emojiIcon.textContent === '😂') {
-      emojiIcon.textContent = '🤣';
+      emojiIcon.textContent = 'X';
     } else {
       emojiIcon.textContent = '😂';
     }
