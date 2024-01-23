@@ -119,6 +119,10 @@ footer {
 	padding: 0;
 	margin: 0
 }
+#joke {
+    min-height: 6em;
+    display: inline-block;
+}
 @media screen and (max-width: 980px) {
 	section {
 
