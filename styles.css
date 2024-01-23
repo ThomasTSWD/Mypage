@@ -1,0 +1,110 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+}
+
+body {
+	background-image: url("edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
+	margin: 0;
+	background-size: cover;
+	background-position: top;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+section {
+	font-family: 'montserrat';
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em 2em;
+	width: 80%;
+	height: 65%;
+	max-width: 980px;
+	z-index: 9
+}
+
+canvas {
+	position: absolute;
+	opacity: .5;
+	top: 0;
+}
+
+.card {
+	border-radius: 12px;
+	padding: 6%;
+	display: flex;
+	flex-direction: column;
+}
+
+.white-card {
+	color: #1e1f21;
+	backdrop-filter: blur(6px);
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(6.5px);
+	-webkit-backdrop-filter: blur(6.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.blur-card {
+	background: rgba(0, 0, 0, 0.4);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(6.5px);
+	-webkit-backdrop-filter: blur(6.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	color: white;
+}
+
+.big-card {
+	grid-column: 1;
+	grid-row: span 3;
+	/* Cette carte occupe x lignes */
+}
+
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4) {
+	grid-column: 2;
+	/* Elles sont dans la deuxième colonne */
+	grid-row: span 1;
+}
+
+.card .icon {
+	font-style: initial;
+	font-size: 2.5em;
+	margin-bottom: 0.3em;
+}
+
+.card span {
+	font-weight: 800;
+	font-size: 1.5em;
+}
+
+@media screen and (max-width: 980px) {
+	section {
+
+		grid-template-columns: 1fr;
+		height: unset;
+
+	}
+
+	.big-card {
+		grid-column: 1;
+	}
+
+	.card:nth-child(2),
+	.card:nth-child(3),
+	.card:nth-child(4) {
+		grid-column: 1;
+	}
+}
