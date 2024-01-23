@@ -85,10 +85,13 @@ canvas {
 }
 
 .card span {
-	font-weight: 800;
-	font-size: 1.5em;
+    font-weight: 800;
+    font-size: 1.5em;
+    padding-bottom: .3em;
 }
-
+abbr {
+  text-decoration: none;
+}
 footer {
     font-family: 'Montserrat';
     width: 72%;

@@ -97,6 +97,9 @@ init();
 
 
 /*****************/
+
+
+
 function getRandomJoke() {
   fetch(
       "https://sv443.net/jokeapi/v2/joke/Any?blacklistFlags=religious,political"
@@ -114,3 +117,48 @@ function getRandomJoke() {
     });
 }
 getRandomJoke();
+
+
+
+
+
+/*****************/
+
+
+function ASCIIAnimation(animArray, speed, DOMtarget) {
+  var currentFrame = 0;
+  for(var i = 0; i < animArray.length; i++) {
+    animArray[i] = animArray[i].replace(/ /g,"&nbsp;");
+    animArray[i] = "<pre>" + animArray[i] + "</pre>";
+  }
+  DOMtarget.innerHTML = animArray[0];
+  currentFrame++;
+  this.animation = setInterval(function() {
+    DOMtarget.innerHTML = animArray[currentFrame];
+    currentFrame++;
+    if(currentFrame >= animArray.length) currentFrame = 0;
+  }, speed);
+  this.getCurrentFrame = function() {
+    return currentFrame;
+  }
+}
+
+ASCIIAnimation.prototype.stopAnimation = function() {
+  clearInterval(this.animation);
+}
+
+// Fonction pour créer une div
+function makeDiv() {
+  return document.createElement("div");
+}
+
+// Fonction pour ajouter un élément au corps du document
+function bodyAppend(element) {
+  document.body.appendChild(element);
+}
+
+// Exemple d'utilisation
+var targetDiv = document.getElementById('ascii-anim'); // Obtient la div existante avec l'id "ascii-anim"
+var animArray1 = [".(^-^)'","-(^-^)-","'(^-^).","-(^o^)-",".(^-^)'","-(^-^)-","'(^-^).","-(^-^)-"];
+
+var anim1 = new ASCIIAnimation(animArray1, 500, targetDiv);
