@@ -89,16 +89,26 @@ canvas {
     font-size: 1.5em;
     padding-bottom: .3em;
 }
-abbr {
+abbr, abbr a {
   text-decoration: none;
+  color: white;
+}
+a{
+	transition-duration: 666ms;
+}
+a:hover{
+	opacity: .6
 }
 footer {
     font-family: 'Montserrat';
     width: 72%;
     color: white;
     margin-top: 9%;
+    z-index: 9;
 }
-
+#ascii-anim{
+	font-weight: 900
+}
 @media screen and (max-width: 980px) {
 	section {
 

@@ -98,7 +98,17 @@ init();
 
 /*****************/
 
-
+function alternateEmojis() {
+  const emojiIcon = document.getElementById('emoji-icon');
+  if (emojiIcon) {
+    // Utilise une variable pour suivre l'état actuel
+    if (emojiIcon.textContent === '😂') {
+      emojiIcon.textContent = '🤣';
+    } else {
+      emojiIcon.textContent = '😂';
+    }
+  }
+}
 
 function getRandomJoke() {
   fetch(
@@ -115,10 +125,11 @@ function getRandomJoke() {
         ).innerHTML = `${data.setup}<br><br>${data.delivery}`;
       }
     });
+     alternateEmojis();
 }
 getRandomJoke();
 
-
+setInterval(getRandomJoke, 6500);
 
 
 
