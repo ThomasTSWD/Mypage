@@ -107,10 +107,14 @@ footer {
     z-index: 9;
 }
 #ascii-anim {
-	font-weight: 900;
-	font-size: 4em;
-	text-align: center;
-	
+    font-weight: 900;
+    font-size: 4em;
+    text-align: center;
+    padding: 3% 0;
+}
+#ascii-anim  pre{
+	padding: 0;
+	margin: 0
 }
 @media screen and (max-width: 980px) {
 	section {
