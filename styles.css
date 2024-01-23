@@ -142,3 +142,8 @@ footer {
 		grid-column: 1;
 	}
 }
+@media screen and (minwidth: 1990px) {
+body{
+	font-size: 18px;
+}
+}
