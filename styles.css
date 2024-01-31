@@ -1,162 +1,155 @@
 html {
-min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: hidden;    
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
 body {
-	margin: 0;
-	width: 100%;
-	padding: 3% 0;
-	overflow: auto;
-    background-image: url("img/edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
-    background-size: cover;
-    background-position: top;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-     height: calc(100% - 6%);
+  margin: 0;
+  width: 100%;
+  padding: 3% 0;
+  overflow: auto;
+  background-image: url("img/edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100% - 6%);
 }
 
 section {
-	font-family: 'montserrat';
+  font-family: "montserrat";
 
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 1em 2em;
-	width: 80%;
-	height: 65%;
-	max-width: 980px;
-	z-index: 9
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em 2em;
+  width: 80%;
+  height: 65%;
+  max-width: 980px;
+  z-index: 9;
 }
 
 canvas {
-    position: absolute;
-    opacity: .5;
-    top: 0;
-    filter: invert(1);
-    mix-blend-mode: hard-light;
+  position: absolute;
+  opacity: 0.5;
+  top: 0;
+  filter: invert(1);
+  mix-blend-mode: hard-light;
 }
 
 .card {
-	border-radius: 12px;
-	padding: 6%;
-	display: flex;
-	flex-direction: column;
+  border-radius: 12px;
+  padding: 6%;
+  display: flex;
+  flex-direction: column;
 }
 
 .white-card {
-	color: #1e1f21;
-	backdrop-filter: blur(6px);
-	background: rgba(255, 255, 255, 0.5);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(6.5px);
-	-webkit-backdrop-filter: blur(6.5px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #1e1f21;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .blur-card {
-	background: rgba(0, 0, 0, 0.4);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(6.5px);
-	-webkit-backdrop-filter: blur(6.5px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	color: white;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
 }
 
-
-
 .card:nth-child(1) {
-    grid-column: span 2; /* Cette carte occupe 2 colonnes */
-    grid-row: span 5; /* Cette carte occupe toute la hauteur */
+  grid-column: span 2; /* Cette carte occupe 2 colonnes */
+  grid-row: span 5; /* Cette carte occupe toute la hauteur */
 }
 
 .card:nth-child(2),
 .card:nth-child(3) {
-    grid-column: 3 / span 2; /* Commence à la colonne 3, s'étend sur 2 colonnes */
-    grid-row: span 2; /* Cette carte occupe 2 lignes */
+  grid-column: 3 / span 2; /* Commence à la colonne 3, s'étend sur 2 colonnes */
+  grid-row: span 2; /* Cette carte occupe 2 lignes */
 }
 
 .card:nth-child(4) {
-    grid-column: 3 / span 1; /* Commence à la colonne 3, s'étend sur 1 colonne */
-    grid-row: span 1;
+  grid-column: 3 / span 1; /* Commence à la colonne 3, s'étend sur 1 colonne */
+  grid-row: span 1;
 }
 
 .card:nth-child(5) {
-    grid-column: 4 / span 1; /* Commence à la colonne 4, s'étend sur 1 colonne */
-    grid-row: span 1;
+  grid-column: 4 / span 1; /* Commence à la colonne 4, s'étend sur 1 colonne */
+  grid-row: span 1;
 }
 
-
-
-
 .card .icon {
-	font-style: initial;
-	font-size: 2.5em;
-	margin-bottom: 0.3em;
+  font-style: initial;
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
 }
 
 .card span {
-    font-weight: 800;
-    font-size: 1.5em;
-    padding-bottom: .3em;
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-bottom: 0.3em;
 }
-abbr, abbr a {
+abbr,
+abbr a {
   text-decoration: none;
   color: white;
 }
-a{
-	transition-duration: 666ms;
+a {
+  transition-duration: 666ms;
 }
-a:hover{
-	opacity: .6
+a:hover {
+  opacity: 0.6;
 }
 footer {
-    font-family: 'Montserrat';
-    width: 72%;
-    color: white;
-    margin-top: 9%;
-    z-index: 9;
+  font-family: "Montserrat";
+  width: 72%;
+  color: white;
+  margin-top: 9%;
+  z-index: 9;
 }
 #ascii-anim {
-    font-weight: 900;
-    font-size: 4em;
-    text-align: center;
-    padding: 3% 0;
+  font-weight: 900;
+  font-size: 4em;
+  text-align: center;
+  padding: 3% 0;
 }
-#ascii-anim  pre{
-	padding: 0;
-	margin: 0
+#ascii-anim pre {
+  padding: 0;
+  margin: 0;
 }
 #joke {
-    min-height: 6em;
-    display: inline-block;
+  min-height: 6em;
+  display: inline-block;
 }
 @media screen and (max-width: 980px) {
-	section {
+  section {
+    grid-template-columns: 1fr;
+    height: unset;
+    width: 80%;
+  }
 
-		grid-template-columns: 1fr;
-		height: unset;
-		width: 80%;
-
-	}
-
-
-	.card:nth-child(1),
-	.card:nth-child(2),
-	.card:nth-child(3),
-	.card:nth-child(4),
-	.card:nth-child(5)  {
-		grid-column: 1;
-	}
+  .card:nth-child(1),
+  .card:nth-child(2),
+  .card:nth-child(3),
+  .card:nth-child(4),
+  .card:nth-child(5) {
+    grid-column: 1;
+  }
 }
 @media screen and (minwidth: 1990px) {
-body{
-	font-size: 18px;
-}
+  body {
+    font-size: 18px;
+  }
 }

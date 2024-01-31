@@ -3,7 +3,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var c = canvas.getContext("2d");
-var circleArray = []; // Ajout de la déclaration de circleArray
+var circleArray = [];
 
 const color = ["#f9d5bb", "#a6b9ea", "#781526"];
 
@@ -127,6 +127,9 @@ setInterval(getRandomJoke, 7500);
 
 /*****************/
 
+// Déclare une variable pour stocker l'instance d'animation
+var currentAnimation;
+
 function ASCIIAnimation(animArray, speed, DOMtarget) {
   var currentFrame = 0;
   for (var i = 0; i < animArray.length; i++) {
@@ -149,17 +152,17 @@ ASCIIAnimation.prototype.stopAnimation = function () {
   clearInterval(this.animation);
 };
 
-// Fonction pour créer une div
-function makeDiv() {
-  return document.createElement("div");
+function startNewAnimation(animArray, speed, DOMtarget) {
+  // Arrête l'animation en cours s'il y en a une
+  if (currentAnimation) {
+    currentAnimation.stopAnimation();
+    clearInterval(currentAnimation.animation);
+  }
+
+  // Crée une nouvelle instance d'animation
+  currentAnimation = new ASCIIAnimation(animArray, speed, DOMtarget);
 }
 
-// Fonction pour ajouter un élément au corps du document
-function bodyAppend(element) {
-  document.body.appendChild(element);
-}
-
-// Exemple d'utilisation
 var targetDiv = document.getElementById("ascii-anim"); // Obtient la div existante avec l'id "ascii-anim"
 var animArray1 = [
   ".(^-^)'",
@@ -172,4 +175,27 @@ var animArray1 = [
   "-(^-^)-",
 ];
 
-var anim1 = new ASCIIAnimation(animArray1, 500, targetDiv);
+var animArray0 = [
+  "-(*-*)›",
+  "-(*-*)-",
+  "-(*-*)-",
+  "-(*o*)›",
+  "-(*-*)-",
+  "-(*-*)-",
+  "-(*-*)›",
+  "-(*-*)-",
+];
+
+startNewAnimation(animArray0, 500, targetDiv);
+
+const audio = document.querySelector("audio");
+
+audio.addEventListener("play", () => {
+  console.log("Lecture en cours");
+  startNewAnimation(animArray1, 500, targetDiv);
+});
+
+audio.addEventListener("pause", () => {
+  console.log("Lecture en pause");
+  startNewAnimation(animArray0, 500, targetDiv);
+});
