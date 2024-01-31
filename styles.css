@@ -25,7 +25,7 @@ section {
 	font-family: 'montserrat';
 
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 1em 2em;
 	width: 80%;
 	height: 65%;
@@ -69,19 +69,31 @@ canvas {
 	color: white;
 }
 
-.big-card {
-	grid-column: 1;
-	grid-row: span 3;
-	/* Cette carte occupe x lignes */
+
+
+.card:nth-child(1) {
+    grid-column: span 2; /* Cette carte occupe 2 colonnes */
+    grid-row: span 5; /* Cette carte occupe toute la hauteur */
 }
 
 .card:nth-child(2),
-.card:nth-child(3),
-.card:nth-child(4) {
-	grid-column: 2;
-	/* Elles sont dans la deuxième colonne */
-	grid-row: span 1;
+.card:nth-child(3) {
+    grid-column: 3 / span 2; /* Commence à la colonne 3, s'étend sur 2 colonnes */
+    grid-row: span 2; /* Cette carte occupe 2 lignes */
 }
+
+.card:nth-child(4) {
+    grid-column: 3 / span 1; /* Commence à la colonne 3, s'étend sur 1 colonne */
+    grid-row: span 1;
+}
+
+.card:nth-child(5) {
+    grid-column: 4 / span 1; /* Commence à la colonne 4, s'étend sur 1 colonne */
+    grid-row: span 1;
+}
+
+
+
 
 .card .icon {
 	font-style: initial;
@@ -134,13 +146,12 @@ footer {
 
 	}
 
-	.big-card {
-		grid-column: 1;
-	}
 
+	.card:nth-child(1),
 	.card:nth-child(2),
 	.card:nth-child(3),
-	.card:nth-child(4) {
+	.card:nth-child(4),
+	.card:nth-child(5)  {
 		grid-column: 1;
 	}
 }
