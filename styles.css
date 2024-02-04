@@ -12,24 +12,39 @@ body {
   padding: 3% 0;
   overflow: auto;
   background-image: url("img/edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
+  background-image: url("https://images.unsplash.com/photo-1562259934-6e09f6a89a98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   height: calc(100% - 6%);
 }
-
+header {
+  height: 2em;
+  display: flex;
+  justify-content: flex-end;
+  width: 96%;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  align-items: center;
+}
+#clock {
+  font-family: montserrat;
+  font-weight: 100;
+  font-size: 0.8em;
+}
 section {
   font-family: "montserrat";
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1em 2em;
   width: 80%;
   height: 65%;
-  max-width: 980px;
+  max-width: 1200px;
   z-index: 9;
 }
 
@@ -37,8 +52,8 @@ canvas {
   position: absolute;
   opacity: 0.5;
   top: 0;
-  filter: invert(1);
-  mix-blend-mode: hard-light;
+  /* filter: invert(1);
+  mix-blend-mode: hard-light; */
 }
 
 .card {
@@ -51,10 +66,10 @@ canvas {
 .white-card {
   color: #1e1f21;
   backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.45);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6.5px);
-  -webkit-backdrop-filter: blur(6.5px);
+  backdrop-filter: blur(20px);
+
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
