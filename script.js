@@ -165,6 +165,17 @@ function startNewAnimation(animArray, speed, DOMtarget) {
 
 var targetDiv = document.getElementById("ascii-anim"); // Obtient la div existante avec l'id "ascii-anim"
 var animArray1 = [
+  ".(^o^)'",
+  "-(^.^)-",
+  "'(^o^).",
+  "-(^.^)-",
+  ".(^o^)'",
+  "-(^.^)-",
+  "'(^o^).",
+  "-(^.^)-",
+];
+
+var animArray0 = [
   ".(^-^)'",
   "-(^-^)-",
   "'(^-^).",
@@ -172,18 +183,7 @@ var animArray1 = [
   ".(^-^)'",
   "-(^-^)-",
   "'(^-^).",
-  "-(^-^)-"
-];
-
-var animArray0 = [
-  "'(¨-¨)»",
-  ".(¨-¨)›",
-  "'(¨-¨)»",
-  "-(¨o¨)›",
-  ".(¨-¨)»",
-  "'(¨-¨)›",
-  ".(¨-¨)»",
-  "'(¨-¨)›"
+  "-(^-^)-",
 ];
 
 startNewAnimation(animArray0, 500, targetDiv);
