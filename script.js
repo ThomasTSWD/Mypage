@@ -1,4 +1,6 @@
-document.body.classList.add("loaded");
+setTimeout(function () {
+  document.body.classList.add("loaded");
+}, 333);
 
 function alternateEmojis() {
   const emojiIcon = document.getElementById("emoji-icon");
