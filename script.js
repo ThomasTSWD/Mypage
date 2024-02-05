@@ -1,11 +1,10 @@
 setTimeout(function () {
   document.body.classList.add("loaded");
-}, 333);
+}, 122);
 
 function alternateEmojis() {
   const emojiIcon = document.getElementById("emoji-icon");
   if (emojiIcon) {
-    // Utilise une variable pour suivre l'état actuel
     if (emojiIcon.textContent === "😂") {
       emojiIcon.textContent = "💩 ";
     } else {

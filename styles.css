@@ -47,7 +47,7 @@ section {
   height: 65%;
   max-width: 1200px;
   z-index: 9;
-  transform: rotateX(30deg) rotateY(-60deg) scale(0.3);
+  transform: rotateX(30deg) rotateY(-60deg) scale(0.18);
 
   perspective: 2000px;
   perspective-origin: bottom right;
@@ -84,7 +84,9 @@ canvas {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
+.white-card a {
+  color: black;
+}
 .blur-card {
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
