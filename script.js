@@ -1,3 +1,5 @@
+document.body.classList.add("loaded");
+
 function alternateEmojis() {
   const emojiIcon = document.getElementById("emoji-icon");
   if (emojiIcon) {

@@ -7,19 +7,20 @@ html {
 }
 
 body {
-  margin: 0;
-  width: 100%;
-  padding: 3% 0;
-  overflow: auto;
-  background-image: url("img/edit_simon-launay-7GLJ96AjemY-unsplash-min.jpg");
-  background-image: url("https://images.unsplash.com/photo-1562259934-6e09f6a89a98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("img/photo.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: calc(100% - 6%);
+  perspective: 2000px;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
 }
 header {
   height: 2em;
@@ -46,6 +47,12 @@ section {
   height: 65%;
   max-width: 1200px;
   z-index: 9;
+  transform: rotateX(30deg) rotateY(-60deg) scale(0.3);
+
+  perspective: 2000px;
+  perspective-origin: bottom right;
+  transition-timing-function: ease-in-out;
+  transition-duration: 888ms;
 }
 
 canvas {
@@ -61,8 +68,12 @@ canvas {
   padding: 6%;
   display: flex;
   flex-direction: column;
+  transition-timing-function: ease-in-out;
+  transition-duration: 888ms;
 }
-
+.card:hover {
+  transform: translateZ(1em);
+}
 .white-card {
   color: #1e1f21;
   backdrop-filter: blur(6px);
@@ -87,24 +98,36 @@ canvas {
 .card:nth-child(1) {
   grid-column: span 2; /* Cette carte occupe 2 colonnes */
   grid-row: span 5; /* Cette carte occupe toute la hauteur */
+  transform: translateZ(50em);
+  transition-delay: 0ms;
 }
 
-.card:nth-child(2),
+.card:nth-child(2) {
+  grid-column: 3 / span 2;
+  grid-row: span 2;
+  transform: translateZ(-110em);
+  transition-delay: 100ms;
+}
 .card:nth-child(3) {
-  grid-column: 3 / span 2; /* Commence à la colonne 3, s'étend sur 2 colonnes */
-  grid-row: span 2; /* Cette carte occupe 2 lignes */
+  grid-column: 3 / span 2;
+  grid-row: span 2;
+  transform: translateX(28em);
+  transition-delay: 200ms;
 }
 
 .card:nth-child(4) {
-  grid-column: 3 / span 1; /* Commence à la colonne 3, s'étend sur 1 colonne */
+  grid-column: 3 / span 1;
   grid-row: span 1;
+  transform: translateY(19em);
+  transition-delay: 300ms;
 }
 
 .card:nth-child(5) {
-  grid-column: 4 / span 1; /* Commence à la colonne 4, s'étend sur 1 colonne */
+  grid-column: 4 / span 1;
   grid-row: span 1;
+  transform: translateZ(-183em);
+  transition-delay: 400ms;
 }
-
 .card .icon {
   font-style: initial;
   font-size: 2.5em;
@@ -116,6 +139,12 @@ canvas {
   font-size: 1.5em;
   padding-bottom: 0.3em;
 }
+
+body.loaded section,
+body.loaded .card {
+  transform: none;
+}
+
 abbr,
 abbr a {
   text-decoration: none;
@@ -127,12 +156,20 @@ a {
 a:hover {
   opacity: 0.6;
 }
+audio {
+  audio::-webkit-media-controls-panel {
+    background-color: #616161;
+  }
+}
 footer {
   font-family: "Montserrat";
   width: 72%;
   color: white;
   margin-top: 9%;
   z-index: 9;
+  position: fixed;
+  bottom: 0;
+  height: 2em;
 }
 #ascii-anim {
   font-weight: 900;
