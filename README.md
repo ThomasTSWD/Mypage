@@ -1,5 +1,3 @@
-Tests
-
 ### github
 
 https://thomastswd.github.io/mypage/
